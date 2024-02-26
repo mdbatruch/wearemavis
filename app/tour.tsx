@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 
-// import styles from '../styles/global.css';
-
 import styles from '../styles/Button.module.css';
+
 const Tour = () => {
 
     return (
@@ -104,7 +103,7 @@ const Tour = () => {
                                 <span className="bit-date">Fri, MAR 1</span>
                                 </div>
                                 <div className="bit-titleWrapper">
-                                <div className="bit-venue">Ortlieb's</div>
+                                <div className="bit-venue">Ortliebs</div>
                                 </div>
                                 <div className="bit-location">Philadelphia, PA</div>
                             </a>
