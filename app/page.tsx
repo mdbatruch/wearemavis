@@ -1,6 +1,7 @@
 import Banner from './banner';
 import Navigation from './navigation';
 import Video from './video';
+import Tour from './tour';
 import Footer from './footer';
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         <Navigation />
         <Banner />
         <Video />
+        <Tour />
         <Footer />
     </main>
   );
