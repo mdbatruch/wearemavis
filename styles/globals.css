@@ -1,9 +1,8 @@
 /* styles/globals.css */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .first-row-100 {
-    flex: 0 0 100%;
+  flex: 0 0 100%;
 }

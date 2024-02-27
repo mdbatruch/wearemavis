@@ -15,7 +15,10 @@ const config: Config = {
       },
       colors: {
         'mavis-yellow': '#E2DA87'
-      }
+      },
+      fontFamily: {
+        'avenir': ['Avenir', 'sans']
+      },
     },
   },
   plugins: [],
