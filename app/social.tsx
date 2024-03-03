@@ -2,7 +2,7 @@ import React from "react"
 
 const Social = (props: any) => {
   return (
-    <div className={`flex row-100 absolute bottom-8 ${props.align}`}>
+    <div className={`flex items-center bottom-8 ${props.align}`}>
       <a
         className="bg-mavis-yellow p-2 mr-1"
         target="_blank"

@@ -1,0 +1,91 @@
+/* styles/globals.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'variables';
+@import 'keyframes';
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-size: 16px;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.btn {
+  background-color: black;
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.5rem;
+  color: var(--mavis-yellow);
+  text-align: center;
+}
+
+.title {
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.header-animate {
+  top: 0;
+
+  &.scrolled {
+    animation: slideDown 0.5s ease-out;
+    position: fixed;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.h-75dvh {
+  height: 75vh;
+ }
+
+.row-100 {
+  flex: 0 0 100%;
+}
+
+.center-absolute {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -2,7 +2,7 @@ import React from "react"
 
 const Video = () => {
   return (
-    <section id="video" className="bg-black p-16 w-screen flex justify-center">
+    <section id="video" className="bg-black p-16 w-full flex justify-center">
       <iframe
         width="560"
         height="315"

@@ -6,3 +6,8 @@
 .first-row-100 {
   flex: 0 0 100%;
 }
+
+.center-absolute {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

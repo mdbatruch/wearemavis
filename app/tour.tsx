@@ -19,8 +19,8 @@ const Tour = () => {
   }, [])
 
   return (
-    <div id="tour" className="tour bg-white p-16 w-screen">
-      <h2 className="font-bold text-4xl row-100 mb-4 font-avenir uppercase font-black">Tour</h2>
+    <div id="tour" className="tour bg-white p-16 w-full">
+      <h2 className="row-100 font-avenir title">Tour</h2>
       <div className="bg-black bg-black p-8">
         <a
           className="bit-widget-initializer"

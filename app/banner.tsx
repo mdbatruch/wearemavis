@@ -1,25 +1,43 @@
+"use client";
+
 import React from "react"
 import Image from "next/image"
 import backgroundImage from "../public/mavis.jpeg"
-import Social from "./social"
+import { useEffect, useState } from 'react';
 
 const Banner = () => {
+
+  const [imgOffset, setImgOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setImgOffset(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+
   return (
-    <div className="bg-cover bg-center min-h-screen w-full h-dvh relative">
-      <div className="top-0 fixed">
-        <Image src="/MAVIS.png" width={500} height={500} alt="logo" />
-      </div>
+    <div className="bg-cover bg-center w-full h-dvh relative">
       <div
-        className="bg-cover bg-center min-h-screen w-full"
+        className="w-screen"
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
+          backgroundSize: "cover",
+          backgroundPositionX: "50%",
+          backgroundPositionY: `${imgOffset * 0.25}px`,
           width: "100%",
           height: "100%",
+          bottom: "0",
           position: "fixed",
           zIndex: "-1",
         }}
       ></div>
-      <Social align="left-8" />
     </div>
   )
 }
