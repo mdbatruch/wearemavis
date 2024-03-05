@@ -1,9 +1,14 @@
 import Link from "next/link"
 import React from "react"
 
-const Navigation = () => {
+interface NavComponentProps {
+  /** Toggle View */
+  display?: string;
+}
+
+const Navigation: React.FC<NavComponentProps> = ({ display }) => {
   return (
-    <nav className="bg-mavis-yellow p-4 right-16 z-10">
+    <nav className={`${display} bg-mavis-yellow p-4 right-16 z-10`}>
       <div className="container mx-auto flex justify-between items-center">
         <ul className="flex space-x-4">
           <Link className="text-black font-semibold" href="#tour">

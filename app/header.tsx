@@ -3,6 +3,7 @@
 import React from "react"
 import Social from "./social";
 import Navigation from "./navigation";
+import Menu from "./menu";
 import { useEffect, useState } from 'react';
 
 const Header = () => {
@@ -25,9 +26,10 @@ const Header = () => {
     return (
         <header
         className={`header-animate bg-black w-full flex justify-between absolute z-10 p-16 ${isHidden ? 'scrolled' : ''}`}>
-            <Navigation />
+            <Menu />
+            <Navigation display={"hidden lg:flex"} />
             <h1 className="text-white font-avenir text-8xl uppercase font-bold absolute center-absolute">Mavis</h1>
-            <Social align="right-8" />
+            <Social align={"right-8"} display={'hidden lg:flex'} />
         </header>
     );
 }

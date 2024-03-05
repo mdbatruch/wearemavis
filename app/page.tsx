@@ -6,6 +6,7 @@ import Video from "./video"
 import Tour from "./tour"
 import Footer from "./footer"
 import Header from "./header"
+import MobileMenu from "./mobileMenu"
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Latest />
       <Video />
       <Tour />
+      <MobileMenu />
       <Footer />
     </main>
   )
