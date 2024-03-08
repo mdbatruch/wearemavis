@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import { SiteProvider } from "./contexts/SiteContext"
+import App from "./app"
 import "./scss/globals.scss"
 
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "We are Mavis",
@@ -17,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <SiteProvider>
-      <html lang="en" className="scroll-smooth">
-        <body className={inter.className}>{children}</body>
-      </html>
+      <App children={children} />
     </SiteProvider>
   )
 }

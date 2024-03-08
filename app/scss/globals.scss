@@ -6,6 +6,8 @@
 @import 'variables';
 @import 'keyframes';
 @import 'menu';
+@import 'mobile';
+@import 'widget';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -59,15 +61,6 @@ body {
   &.scrolled {
     animation: slideDown 0.5s ease-out;
     position: fixed;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 

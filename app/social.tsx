@@ -9,7 +9,7 @@ interface SocialComponentProps {
 
 const Social: React.FC<SocialComponentProps> = ({ align, display }) => {
   return (
-    <div className={`${display} items-center bottom-8 ${align}`}>
+    <div className={`${display} social items-center bottom-8 ${align}`}>
       <a
         className="bg-mavis-yellow p-2 mr-1 text-black"
         target="_blank"

@@ -28,7 +28,7 @@ const Header = () => {
         className={`header-animate bg-black w-full flex justify-between absolute z-10 p-16 ${isHidden ? 'scrolled' : ''}`}>
             <Menu />
             <Navigation display={"hidden lg:flex"} />
-            <h1 className="text-white font-avenir text-8xl uppercase font-bold absolute center-absolute">Mavis</h1>
+            <h1 className="text-white font-avenir text-6xl md:text-8xl uppercase font-bold absolute center-absolute">Mavis</h1>
             <Social align={"right-8"} display={'hidden lg:flex'} />
         </header>
     );
