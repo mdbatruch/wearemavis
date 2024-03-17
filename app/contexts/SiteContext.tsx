@@ -5,6 +5,8 @@ import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useStat
 export interface SiteContextInterface {
     activeMobile: boolean;
     setActiveMobile: Dispatch<SetStateAction<boolean>>;
+    hasFadedIn: boolean;
+    setHasFadedIn: Dispatch<SetStateAction<boolean>>;
 }
 
 export const SiteContext = createContext<SiteContextInterface | undefined>(
@@ -17,12 +19,15 @@ interface SiteProviderProps {
 
 export const SiteProvider = ({ children }: SiteProviderProps) => {
     const [activeMobile, setActiveMobile] = useState<boolean>(false);
+    const [hasFadedIn, setHasFadedIn] = useState<boolean>(false);
 
     return (
         <SiteContext.Provider
             value={{
                 activeMobile,
-                setActiveMobile
+                setActiveMobile,
+                hasFadedIn,
+                setHasFadedIn
             }}
         >
             {children}

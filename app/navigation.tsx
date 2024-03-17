@@ -16,15 +16,7 @@ interface NavComponentProps {
   margin?: string;
 }
 
-const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition, uppercase, weight, size, margin }) => {
-
-  Navigation.defaultProps = {
-    flexPosition: 'justify-between',
-    uppercase: '',
-    weight: 'font-semibold',
-    size: '',
-    margin: '',
-  };
+const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'justify-between', uppercase = '', weight = 'font-semibold', size = '', margin = ''}) => {
 
   return (
     <nav className={`${display} bg-mavis-yellow p-4 right-16 z-10 navigation`}>

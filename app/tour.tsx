@@ -20,7 +20,7 @@ const Tour = () => {
 
   return (
     <div id="tour" className="tour bg-white p-16 w-full">
-      <h2 className="row-100 font-avenir title">Tour</h2>
+      <h2 className="row-100 font-avenir title text-black">Tour</h2>
       <div className="bg-black bg-black p-8">
         <a
           className="bit-widget-initializer"

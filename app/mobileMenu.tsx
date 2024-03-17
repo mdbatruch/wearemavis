@@ -7,8 +7,12 @@ import { getSiteContext } from "./contexts/SiteContext";
 
 const MobileMenu = () => {
 
-    const { activeMobile, setActiveMobile } = getSiteContext();
+    const { activeMobile, setActiveMobile, hasFadedIn } = getSiteContext();
+
+    const animationClass: string = hasFadedIn ? (activeMobile ? 'fadeIn' : 'fadeOut') : '';
+
     const [prevWidth, setPrevWidth] = useState(() => {
+
         if (typeof window !== 'undefined') {
             return window.innerWidth;
         }
@@ -30,10 +34,10 @@ const MobileMenu = () => {
 
         window.addEventListener('resize', handleResize);
         return () => {window.removeEventListener('resize', handleResize) };
-    }, [activeMobile]);
+    }, [activeMobile, hasFadedIn]);
 
     return (
-        <div className={`mobile-nav-container ${activeMobile ? 'fadeIn' : 'fadeOut'}`}>
+        <div className={`mobile-nav-container ${animationClass}`}>
             <Navigation flexPosition={'justify-center'} uppercase={'uppercase'} weight={'font-bold'} size={'text-4xl'} margin={'mb-4'}/>
             <Social display={'flex'} />
         </div>

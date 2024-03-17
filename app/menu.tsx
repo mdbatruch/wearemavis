@@ -9,10 +9,11 @@ interface MenuComponentProps {
   }
 
 const Menu: React.FC<MenuComponentProps> = ({ active }) => {
-    const {activeMobile, setActiveMobile } = getSiteContext();
+    const {activeMobile, setActiveMobile, hasFadedIn, setHasFadedIn } = getSiteContext();
 
     const toggleMenu = () => {
         setActiveMobile(!activeMobile);
+        setHasFadedIn(true);
     };
     
     return (
