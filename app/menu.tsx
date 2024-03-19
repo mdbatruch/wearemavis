@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react"
+import React, { useCallback } from "react"
 import { getSiteContext } from "./contexts/SiteContext";
 
 interface MenuComponentProps {
@@ -9,12 +9,12 @@ interface MenuComponentProps {
   }
 
 const Menu: React.FC<MenuComponentProps> = ({ active }) => {
-    const {activeMobile, setActiveMobile, hasFadedIn, setHasFadedIn } = getSiteContext();
+    const {activeMobile, setActiveMobile, setHasFadedIn } = getSiteContext();
 
-    const toggleMenu = () => {
+    const toggleMenu = useCallback(() => {
         setActiveMobile(!activeMobile);
         setHasFadedIn(true);
-    };
+    }, [activeMobile]);
     
     return (
         <div id="menu" className={activeMobile ? 'active lg:hidden' : 'lg:hidden'} onClick={toggleMenu}>

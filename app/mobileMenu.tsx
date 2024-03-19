@@ -19,14 +19,11 @@ const MobileMenu = () => {
         return 0;
     });
 
-
     useEffect(() => {
         const handleResize = () => {
             const currentWidth = window.innerWidth;
-
-
-            if ((prevWidth <= 768 && currentWidth > 768) || (prevWidth > 768 && currentWidth <= 768)) {
-                setActiveMobile(currentWidth <= 768);
+            if ((prevWidth <= 768 && currentWidth > 768)) {
+                setActiveMobile(false);
             }
 
             setPrevWidth(currentWidth);

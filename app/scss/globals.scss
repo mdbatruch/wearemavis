@@ -58,8 +58,20 @@ body {
 .header-animate {
   top: 0;
 
+  /**
+  * Come back to this
+  */
   &.scrolled {
     animation: slideDown 0.5s ease-out;
+    // transition: all 0.5s ease;
+    // transform: translateY(0%);
+    position: fixed;
+  }
+
+  &.scrollUp {
+    // animation: headerSlideUp 0.5s ease-out;
+    transition: all 0.5s ease;
+    transform: translateY(-100%);
     position: fixed;
   }
 }

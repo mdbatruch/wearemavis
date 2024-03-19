@@ -10,8 +10,12 @@ const Banner = () => {
   const [imgOffset, setImgOffset] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setImgOffset(window.scrollY);
+    const handleScroll = (): void => {
+      const currentWidth = window.innerWidth;
+
+      if (currentWidth > 768) {
+        setImgOffset(window.scrollY);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);

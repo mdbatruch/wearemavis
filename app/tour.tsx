@@ -1,10 +1,8 @@
 "use client"
 
-import { useEffect } from "react"
+import React, { useEffect, forwardRef } from "react"
 
-import React from "react"
-
-const Tour = () => {
+const Tour = forwardRef<HTMLDivElement>((ref) => {
   useEffect(() => {
     const script = document.createElement("script")
 
@@ -111,6 +109,6 @@ const Tour = () => {
       </div>
     </div>
   )
-}
+});
 
 export default Tour

@@ -1,5 +1,6 @@
 import Link from "next/link"
-import React from "react"
+import React, { useCallback, useRef } from "react"
+import { getSiteContext } from "./contexts/SiteContext";
 
 interface NavComponentProps {
   /** Toggle View */
@@ -18,14 +19,28 @@ interface NavComponentProps {
 
 const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'justify-between', uppercase = '', weight = 'font-semibold', size = '', margin = ''}) => {
 
+  const {activeMobile, setActiveMobile } = getSiteContext();
+
+  const componentElement = useRef<null | HTMLDivElement>(null);
+
+  const handleClick = useCallback(() => {
+    setActiveMobile(!activeMobile);
+
+    if (componentElement.current) {
+      const yOffset = -100;
+
+      componentElement.current.scrollIntoView({ behavior: 'smooth', block: 'start'})
+    }
+  }, [activeMobile]);
+
   return (
     <nav className={`${display} bg-mavis-yellow p-4 right-16 z-10 navigation`}>
       <div className={`container mx-auto flex ${flexPosition} items-center`}>
         <ul className="flex space-x-4 link-container">
-          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#tour">
+          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#tour" onClick={handleClick}>
             Tour
           </Link>
-          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#video">
+          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#video" onClick={handleClick}>
             Watch
           </Link>
           <Link
@@ -34,7 +49,7 @@ const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'just
           >
             Store
           </Link>
-          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#contact">
+          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#contact" onClick={handleClick}>
             Contact
           </Link>
         </ul>
