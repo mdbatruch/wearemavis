@@ -11,7 +11,7 @@ const Header = () => {
     const [isHidden, setIsHidden] = useState(false);
     const [isMid, setIsMid] = useState(false);
 
-    const elementRef = useRef(null);
+    const elementRef = useRef<HTMLDivElement | null>(null);
 
     const animationClass: string = isMid ? 'scrollUp' : (isHidden ? 'scrolled' : '');
 
@@ -26,7 +26,7 @@ const Header = () => {
 
             setIsHidden(scrollTop > 512);
 
-            if (element.classList.contains("scrolled")) {
+            if (element?.classList.contains("scrolled")) {
                 if (scrollTop > 256 && scrollTop < 512) {
                     setIsMid(true);
                 } else {
