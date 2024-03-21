@@ -29,7 +29,11 @@ jobs:
             SSH_PRIVATE_KEY: ${{ secrets.SSH }}
             SERVER_IP: ${{ secrets.MAVIS_IP }}
             USERNAME: ${{ secrets.MAVIS_USERNAME }}
+            PASSPHRASE: ${{ secrets.PASSPHRASE }}
           run: |
-            eval "$(ssh-agent -s)"
-            ssh-add <(echo "${SSH_PRIVATE_KEY}")
-            scp -r ./build/* ${USERNAME}@${SERVER_IP}:/var/www/wearemavis
+            # Write passhprase to temp file 
+            echo "$SSH_PRIVATE_KEY" > key.pem
+            chmod 600 key.pem
+            
+            # Use passphrase to enter and deploy build files to server
+            echo "$PASSPHRASE" | sshpass -e ssh -o StrictHostKeyChecking=no -i key.pem ${USERNAME}@${SERVER_IP} 'mkdir -p /var/www/wearemavis && scp -r -i key.pem -o StrictHostKeyChecking=no ./build/* ${USERNAME}@${SERVER_IP}:/var/www/wearemavis'
