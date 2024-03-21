@@ -5,6 +5,7 @@ const Latest = () => {
 
     return (
         <div
+        id="listen"
         className="bg-white p-16 w-full flex justify-evenly flex-col md:flex-row">
             <div className="img-container p-8 flex justify-center">
                 <Image src="/lonely_show.jpeg" width={500} height={500} alt="logo" />

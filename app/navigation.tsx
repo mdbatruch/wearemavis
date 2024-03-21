@@ -37,6 +37,9 @@ const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'just
     <nav className={`${display} bg-mavis-yellow p-4 right-16 z-10 navigation`}>
       <div className={`container mx-auto flex ${flexPosition} items-center`}>
         <ul className="flex space-x-4 link-container">
+          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#listen" onClick={handleClick}>
+            Listen
+          </Link>
           <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#tour" onClick={handleClick}>
             Tour
           </Link>
