@@ -36,4 +36,4 @@ jobs:
             chmod 600 key.pem
             
             # Use passphrase to enter and deploy build files to server
-            sshpass -p "$PASSPHRASE" ssh -o StrictHostKeyChecking=no -i key.pem ${USERNAME}@${SERVER_IP} 'mkdir -p /var/www/wearemavis && scp -r -i key.pem -o StrictHostKeyChecking=no ./next/* ${USERNAME}@${SERVER_IP}:/var/www/wearemavis'
+            sshpass -p "$PASSPHRASE" ssh -o StrictHostKeyChecking=no -i key.pem ${USERNAME}@${SERVER_IP} 'mkdir -p /var/www/wearemavis && scp -r -i key.pem -o StrictHostKeyChecking=no ./next/* ${USERNAME}@${SERVER_IP}:/var/www/wearemavis' || { echo "Deployment failed" >&2; exit 1; }
