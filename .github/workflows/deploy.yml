@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Install Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '18.17.0'
+
+        - name: Install dependencies
+          run: npm install
+
+        - name: Build Next.js app
+          run: npm run build
+
+        - name: Deploy to Server
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH }}
+            SERVER_IP: ${{ secrets.MAVIS_IP }}
+            USERNAME: ${{ secrets.MAVIS_USERNAME }}
+          run: |
+            eval "$(ssh-agent -s)"
+            ssh-add <(echo "${SSH_PRIVATE_KEY}")
+            scp -r ./build/* ${USERNAME}@${SERVER_IP}:/var/www/wearemavis
