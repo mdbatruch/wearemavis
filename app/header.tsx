@@ -12,19 +12,18 @@ const Header = () => {
     const [isMid, setIsMid] = useState(false);
 
     const elementRef = useRef<HTMLDivElement | null>(null);
-
-    const animationClass: string = isMid ? 'scrollUp' : (isHidden ? 'scrolled' : '');
+    const [animationClass, setAnimationClass] = useState<string>('');
 
     /**
      * TODO: clean this up
      */
     useEffect(() => {
-        const handleScroll = (): void => {
         const scrollTop = window.scrollY;
+        
+        setAnimationClass(scrollTop > 128 ? 'scrolled' : isMid ? 'scrollUp' : (isHidden ? 'scrolled' : ''));
 
+        const handleScroll = (): void => {
         const element = elementRef.current;
-
-            setIsHidden(scrollTop > 512);
 
             if (element?.classList.contains("scrolled")) {
                 if (scrollTop > 256 && scrollTop < 512) {

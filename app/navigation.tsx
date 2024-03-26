@@ -24,10 +24,12 @@ const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'just
   const componentElement = useRef<null | HTMLDivElement>(null);
 
   const handleClick = useCallback(() => {
-    setActiveMobile(!activeMobile);
+    const currentWidth = window.innerWidth;
+    if (currentWidth < 768) {
+      setActiveMobile(!activeMobile);
+    }
 
     if (componentElement.current) {
-      const yOffset = -100;
 
       componentElement.current.scrollIntoView({ behavior: 'smooth', block: 'start'})
     }
