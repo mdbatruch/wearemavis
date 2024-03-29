@@ -2,7 +2,7 @@
 
 import React, { useEffect, forwardRef } from "react"
 
-const Tour = forwardRef<HTMLDivElement>(() => {
+const Tour: React.FC = forwardRef<HTMLDivElement>(() => {
   useEffect(() => {
     const script = document.createElement("script")
 

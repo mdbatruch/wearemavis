@@ -10,7 +10,7 @@ import MobileMenu from "./mobileMenu"
 import Tour from "./tour"
 import Video from "./video"
 
-const Home = () => {
+const Home: React.FC = () => {
 
   const componentElement = useRef<null | HTMLDivElement>(null);
   

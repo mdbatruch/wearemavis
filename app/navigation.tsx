@@ -1,5 +1,5 @@
 import Link from "next/link"
-import React, { useCallback, useRef } from "react"
+import React, { useCallback } from "react"
 import { GetSiteContext } from "./contexts/SiteContext";
 
 interface NavComponentProps {
@@ -21,7 +21,7 @@ const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'just
 
   const {activeMobile, setActiveMobile } = GetSiteContext();
 
-  const componentElement = useRef<null | HTMLDivElement>(null);
+  const linkStyles = `text-black ${uppercase} ${weight} ${size} ${margin}`;
 
   const handleClick = useCallback(() => {
     const currentWidth = window.innerWidth;
@@ -29,34 +29,49 @@ const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'just
       setActiveMobile(!activeMobile);
     }
 
-    if (componentElement.current) {
-
-      componentElement.current.scrollIntoView({ behavior: 'smooth', block: 'start'})
-    }
   }, [activeMobile, setActiveMobile]);
+  
 
   return (
     <nav className={`${display} bg-mavis-yellow p-4 right-16 z-10 navigation`}>
       <div className={`container mx-auto flex ${flexPosition} items-center`}>
         <ul className="flex space-x-4 link-container">
-          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#listen" onClick={handleClick}>
-            Listen
+        <li className={linkStyles}>
+          <Link href="#listen">
+              <div onClick={handleClick}>
+                Listen
+              </div>
           </Link>
-          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#tour" onClick={handleClick}>
-            Tour
+        </li>
+        <li className={linkStyles}>
+          <Link href="#tour">
+            <div onClick={handleClick}>
+              Tour
+            </div>
           </Link>
-          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#video" onClick={handleClick}>
-            Watch
+        </li>
+        <li className={linkStyles}>
+          <Link href="#video">
+            <div onClick={handleClick}>
+              Watch
+            </div>
           </Link>
+        </li>
+        <li  className={linkStyles}>
           <Link
-            className={`text-black ${uppercase} ${weight} ${size} ${margin}`}
+            className={linkStyles}
             href="https://wearemavis.bandcamp.com/merch/smile-t-shirt"
           >
             Store
           </Link>
-          <Link className={`text-black ${uppercase} ${weight} ${size} ${margin}`} href="#contact" onClick={handleClick}>
-            Contact
+        </li>
+        <li className={linkStyles}>
+          <Link href="#contact">
+            <div onClick={handleClick}>
+              Contact
+            </div>
           </Link>
+        </li>
         </ul>
       </div>
     </nav>

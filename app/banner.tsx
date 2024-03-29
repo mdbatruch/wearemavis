@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import backgroundImage from "../public/mavis.jpg"
 
-const Banner = () => {
+const Banner: React.FC = () => {
 
   const [imgOffset, setImgOffset] = useState<number>(450);
 
@@ -12,8 +12,6 @@ const Banner = () => {
     if (currentWidth > 768) {
       setImgOffset(window.scrollY + imgOffset);
     }
-
-    console.log(window.scrollY, imgOffset);
   }, [imgOffset]);
 
   useEffect(() => {

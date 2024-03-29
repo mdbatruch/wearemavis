@@ -1,7 +1,7 @@
 import React from "react"
 import Social from "./social"
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer
       id="contact"

@@ -1,6 +1,6 @@
 import React from "react"
 
-const Video = () => {
+const Video: React.FC = () => {
   return (
     <section id="video" className="bg-black py-24 px-16 w-full flex justify-center">
       <iframe

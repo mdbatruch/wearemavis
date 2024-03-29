@@ -6,7 +6,7 @@ import { GetSiteContext } from "./contexts/SiteContext";
 import Navigation from "./navigation";
 import Social from "./social";
 
-const MobileMenu = () => {
+const MobileMenu: React.FC = () => {
 
     const { activeMobile, setActiveMobile, hasFadedIn } = GetSiteContext();
 
@@ -36,7 +36,7 @@ const MobileMenu = () => {
 
     return (
         <div className={`mobile-nav-container ${animationClass}`}>
-            <Navigation flexPosition={'justify-center'} uppercase={'uppercase'} weight={'font-bold'} size={'text-4xl'} margin={'mb-4'}/>
+            <Navigation flexPosition={'justify-center'} uppercase={'uppercase'} weight={'font-bold'} size={'text-4xl'} margin={'mb-2'}/>
             <Social display={'flex'} />
         </div>
     );
