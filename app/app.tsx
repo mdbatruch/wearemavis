@@ -7,7 +7,7 @@ import { GetSiteContext } from "./contexts/SiteContext";
 
 const inter = Inter({ subsets: ["latin"] })
 
-const App: React.FC = ({ children }: any) => {
+const App = ({ children }: any) => {
 
     const { activeMobile } = GetSiteContext();
 
