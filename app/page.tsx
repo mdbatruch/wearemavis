@@ -1,14 +1,14 @@
 "use client"
 
+import { useRef } from "react"
+
 import Banner from "./banner"
-import Latest from "./latest"
-import Video from "./video"
-import Tour from "./tour"
 import Footer from "./footer"
 import Header from "./header"
+import Latest from "./latest"
 import MobileMenu from "./mobileMenu"
-
-import { useRef } from "react"
+import Tour from "./tour"
+import Video from "./video"
 
 const Home = () => {
 

@@ -1,14 +1,15 @@
 "use client";
 
-import React from "react"
-import { getSiteContext } from "./contexts/SiteContext";
-
 import { Inter } from "next/font/google"
+
+import React from "react"
+import { GetSiteContext } from "./contexts/SiteContext";
+
 const inter = Inter({ subsets: ["latin"] })
 
 const App = ({ children }: any) => {
 
-    const { activeMobile } = getSiteContext();
+    const { activeMobile } = GetSiteContext();
 
     return (
         <html lang="en" className="scroll-smooth">

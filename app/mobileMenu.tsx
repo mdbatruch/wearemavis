@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react"
-import Social from "./social";
+import { GetSiteContext } from "./contexts/SiteContext";
+
 import Navigation from "./navigation";
-import { getSiteContext } from "./contexts/SiteContext";
+import Social from "./social";
 
 const MobileMenu = () => {
 
-    const { activeMobile, setActiveMobile, hasFadedIn } = getSiteContext();
+    const { activeMobile, setActiveMobile, hasFadedIn } = GetSiteContext();
 
     const animationClass: string = hasFadedIn ? (activeMobile ? 'fadeIn' : 'fadeOut') : '';
 
@@ -31,7 +32,7 @@ const MobileMenu = () => {
 
         window.addEventListener('resize', handleResize);
         return () => {window.removeEventListener('resize', handleResize) };
-    }, [activeMobile, hasFadedIn]);
+    }, [activeMobile, hasFadedIn, prevWidth, setActiveMobile]);
 
     return (
         <div className={`mobile-nav-container ${animationClass}`}>

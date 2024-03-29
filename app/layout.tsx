@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { SiteProvider } from "./contexts/SiteContext"
 import App from "./app"
+import { SiteProvider } from "./contexts/SiteContext"
 import "./scss/globals.scss"
 
 
@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <SiteProvider>
-      <App children={children} />
+      <App>
+        {children}
+      </App>
     </SiteProvider>
   )
 }

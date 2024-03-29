@@ -1,24 +1,22 @@
 "use client";
 
-import React from "react"
+import React, { useCallback, useEffect, useState } from 'react';
 import backgroundImage from "../public/mavis.jpg"
-import { useEffect, useState } from 'react';
 
 const Banner = () => {
 
   const [imgOffset, setImgOffset] = useState<number>(450);
 
-  const [danni, setDanni] = useState<number>(450);
+  const handleScroll = useCallback((): void => {
+    const currentWidth = window.innerWidth;
+    if (currentWidth > 768) {
+      setImgOffset(window.scrollY + imgOffset);
+    }
+
+    console.log(window.scrollY, imgOffset);
+  }, [imgOffset]);
 
   useEffect(() => {
-
-    const handleScroll = (): void => {
-      const currentWidth = window.innerWidth;
-      if (currentWidth > 768) {
-        setImgOffset(window.scrollY + imgOffset);
-      }
-    };
-
     window.addEventListener('scroll', handleScroll);
 
     return () => {

@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useRef } from "react"
-import Social from "./social";
-import Navigation from "./navigation";
 import Menu from "./menu";
+import Navigation from "./navigation";
+import Social from "./social";
 
 const Header = () => {
 

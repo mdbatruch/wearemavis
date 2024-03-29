@@ -1,6 +1,6 @@
 import Link from "next/link"
 import React, { useCallback, useRef } from "react"
-import { getSiteContext } from "./contexts/SiteContext";
+import { GetSiteContext } from "./contexts/SiteContext";
 
 interface NavComponentProps {
   /** Toggle View */
@@ -19,7 +19,7 @@ interface NavComponentProps {
 
 const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'justify-between', uppercase = '', weight = 'font-semibold', size = '', margin = ''}) => {
 
-  const {activeMobile, setActiveMobile } = getSiteContext();
+  const {activeMobile, setActiveMobile } = GetSiteContext();
 
   const componentElement = useRef<null | HTMLDivElement>(null);
 
@@ -33,7 +33,7 @@ const Navigation: React.FC<NavComponentProps> = ({ display, flexPosition = 'just
 
       componentElement.current.scrollIntoView({ behavior: 'smooth', block: 'start'})
     }
-  }, [activeMobile]);
+  }, [activeMobile, setActiveMobile]);
 
   return (
     <nav className={`${display} bg-mavis-yellow p-4 right-16 z-10 navigation`}>

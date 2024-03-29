@@ -35,7 +35,7 @@ export const SiteProvider = ({ children }: SiteProviderProps) => {
     )
 }
 
-export function getSiteContext() {
+export function GetSiteContext() {
     const context = useContext(SiteContext);
   
     if (context === undefined) {

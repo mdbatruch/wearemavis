@@ -2,7 +2,7 @@
 
 import React, { useEffect, forwardRef } from "react"
 
-const Tour = forwardRef<HTMLDivElement>((ref) => {
+const Tour = forwardRef<HTMLDivElement>(() => {
   useEffect(() => {
     const script = document.createElement("script")
 
@@ -110,5 +110,7 @@ const Tour = forwardRef<HTMLDivElement>((ref) => {
     </div>
   )
 });
+
+Tour.displayName = "Tour";
 
 export default Tour
