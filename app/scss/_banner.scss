@@ -1,0 +1,35 @@
+#banner {
+    height: 50dvh;
+
+    .banner-container {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+        z-index: -1;
+    }
+}
+
+@media(min-width: 768px) {
+    #banner {
+        height: 60dvh;
+    }
+}
+
+@media(min-width: 1030px) {
+    #banner {
+        height: 75dvh;
+    }
+}
+
+@media(min-width: 1240px) {
+    #banner {
+        height: 95dvh;
+
+        .banner-container {
+            background-size: cover;
+        }
+    }
+}

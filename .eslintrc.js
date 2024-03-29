@@ -1,50 +1,19 @@
 module.exports = {
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/warnings',
-  ],
-  plugins: ["import"],
-  rules: {
-    quotes: 'warn',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      { vars: 'local', args: 'none' },
+  "extends": [
+      "next", 
+      "next/core-web-vitals",
+      'plugin:import/warnings',
     ],
-    'max-len': [
-      'warn',
-      {
-        code: 120,
-        comments: 120,
-        ignoreComments: false,
-        ignoreTrailingComments: false,
-        ignorePattern: '^import .*|^export .*|<[A-Za-z].*',
-        ignoreUrls: true,
-      },
-    ],
-    'sort-imports': [
-      2,
-      {
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-      },
-    ],
+  "rules": {
+    "no-unused-vars": "error",
     'import/order': [
       2,
       {
-        groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
         alphabetize: {
           caseInsensitive: true,
           order: 'asc',
         },
-      },
+      }
     ],
-  },
-};
+  }
+}

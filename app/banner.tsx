@@ -1,20 +1,21 @@
 "use client";
 
 import React from "react"
-import Image from "next/image"
-import backgroundImage from "../public/mavis.jpeg"
+import backgroundImage from "../public/mavis.jpg"
 import { useEffect, useState } from 'react';
 
 const Banner = () => {
 
-  const [imgOffset, setImgOffset] = useState(0);
+  const [imgOffset, setImgOffset] = useState<number>(450);
+
+  const [danni, setDanni] = useState<number>(450);
 
   useEffect(() => {
+
     const handleScroll = (): void => {
       const currentWidth = window.innerWidth;
-
       if (currentWidth > 768) {
-        setImgOffset(window.scrollY);
+        setImgOffset(window.scrollY + imgOffset);
       }
     };
 
@@ -27,19 +28,13 @@ const Banner = () => {
 
 
   return (
-    <div className="bg-cover bg-center w-full h-dvh relative">
+    <div id="banner" className="bg-cover bg-center w-full relative">
       <div
-        className="w-screen"
+        className="w-screen banner-container"
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
-          backgroundSize: "cover",
           backgroundPositionX: "50%",
-          backgroundPositionY: `${imgOffset * 0.25}px`,
-          width: "100%",
-          height: "100%",
-          bottom: "0",
-          position: "fixed",
-          zIndex: "-1",
+          backgroundPositionY: `${imgOffset * 0.15}px`,
         }}
       ></div>
     </div>
