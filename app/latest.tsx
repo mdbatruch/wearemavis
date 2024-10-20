@@ -11,7 +11,7 @@ const Latest: React.FC = () => {
                 <Image src="/HolyShitImSorry.png" width={500} height={500} alt="logo" />
             </div>
             <div className="text-container p-8 relative">
-                <h2 className="font-avenir font-black text-black text-6xl uppercase">Holy Shit, I'm Sorry</h2>
+                <h2 className="font-avenir font-black text-black text-6xl uppercase">Holy Shit, I&apos;m Sorry</h2>
                 <p className="text-3xl text-black">new single out now</p>
                 <a
                 className="btn my-1 md:absolute bottom-0 lg:bottom-1/2 w-3/6 text-xl"
