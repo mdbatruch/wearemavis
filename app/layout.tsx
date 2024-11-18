@@ -6,7 +6,7 @@ import "./scss/globals.scss"
 
 export const metadata: Metadata = {
   title: "We are Mavis",
-  description: "Mavis",
+  description: "Mavis - Toronto Punk Band",
 }
 
 export default function RootLayout({
