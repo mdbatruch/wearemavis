@@ -22,7 +22,6 @@ const Banner: React.FC = () => {
     }
   }, []);
 
-
   return (
     <div id="banner" className="bg-cover bg-center w-full relative">
       <div
