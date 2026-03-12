@@ -21,6 +21,16 @@ const Latest: React.FC = () => {
                     target="_blank">Listen</a>
                 </div>
             </div>
+            <div className="bio-container">
+                <p className="text-1xl text-black">
+                    <br/>
+                    Toronto, Ontario’s Mavis probably started sometime in 2018, though no one’s quite sure. Why it’s called “Mavis,” that’s also a mystery. No one really remembers. There’s nothing pretentious about them. They’re five guys in their thirties, all partnered or married, steady jobs, dogs, clean laundry. They are desperately uncool and they don’t seem to care. 
+                    <br/><br/>
+                    And yet, one senses turmoil. It is not the turmoil of younger men. There’s something introspective to their midwestern punk alternative bombast—like they’ve put the ex-lovers behind them but also haven’t entirely forgotten.
+                    <br/><br/>
+                    Now, they seem to be unusually active. They’re releasing a string of new recordings with an increasingly literary bent. They’re up to something. Mavis has never cared what other people think, but it looks like they have something they want to tell us.
+                </p>
+            </div>
         </div>
     );
 }
