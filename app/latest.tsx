@@ -9,14 +9,14 @@ const Latest: React.FC = () => {
         className="bg-white p-16 w-full">
             <div className="flex justify-evenly flex-col xl:flex-row">
                 <div className="img-container p-8 flex justify-center">
-                    <Image src="/Lot6.png" width={500} height={500} alt="logo" />
+                    <Image src="/DeletedDraft.jpg" width={500} height={500} alt="logo" />
                 </div>
                 <div className="text-container p-8 relative xl:w-2/4">
-                    <h2 className="font-avenir font-black text-black text-6xl uppercase">Lot 6</h2>
+                    <h2 className="font-avenir font-black text-black text-6xl uppercase">Deleted Draft</h2>
                     <p className="text-3xl text-black my-5">New single, out now!</p>
                     <a
                     className="btn my-1 xl:absolute bottom-0 xl:bottom-1/3 w-3/6 text-xl"
-                    href="https://open.spotify.com/track/1nFBLa9z3aNQReOtonsTFY"
+                    href="https://open.spotify.com/track/344i3YeXelZSGbZXri6N8t"
                     rel="noopener noreferrer"
                     target="_blank">Listen</a>
                 </div>
